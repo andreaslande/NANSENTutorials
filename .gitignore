@@ -2,3 +2,6 @@
 *.tdms
 *.tif
 *.raw
+
+# OS specific
+.DS_Store
