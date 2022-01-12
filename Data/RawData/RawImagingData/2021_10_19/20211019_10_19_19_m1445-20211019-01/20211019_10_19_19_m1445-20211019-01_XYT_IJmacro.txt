@@ -1,0 +1,1 @@
+run('Raw...', 'open=E:\\AL\\2021_10_19\\20211019_10_19_19_m1445-20211019-01\\20211019_10_19_19_m1445-20211019-01_XYT.raw image=[16-bit Unsigned] width=512 height=512 offset=0 number=-32412 gap=0 use');
