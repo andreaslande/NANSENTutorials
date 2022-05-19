@@ -33,7 +33,7 @@ function varargout = loadBehaviorData(sessionObject, varargin)
 % % % % % % % % % % % % % % CUSTOM CODE BLOCK % % % % % % % % % % % % % % 
 
 % Localize the TDMS file
-tdms_filepath = dir(fullfile(sessionObject.getSessionFolder('BehavioralData'),'*.tdms'));
+tdms_filepath = dir(fullfile(sessionObject.getSessionFolder('Behavioral'),'*.tdms'));
 
 % If the file exist
 if ~isempty(tdms_filepath)

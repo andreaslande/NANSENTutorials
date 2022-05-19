@@ -1,7 +1,7 @@
-function varargout = loadBehaviorData(sessionObject, varargin)
-%LOADBEHAVIORDATA Loads labview TDMS file and saves behavioral data.
-%   Load labview TDMS where the data aqcuisition data from LabView is
-%   stored. This is saved as a subfield into 
+function varargout = downloadDemoData(sessionObject, varargin)
+%DOWNLOADDEMODATA Downloads data used for the demo in NANSEN Tutorials.
+%   Downloads data from Dropbox and saves to 
+
 
 % % % % % % % % % % % % % % CUSTOM CODE BLOCK % % % % % % % % % % % % % % 
 % Create a struct of default parameters (if applicable) and specify one or 
@@ -31,37 +31,9 @@ function varargout = loadBehaviorData(sessionObject, varargin)
     
     
 % % % % % % % % % % % % % % CUSTOM CODE BLOCK % % % % % % % % % % % % % % 
-
-% Localize the TDMS file
-tdms_filepath = dir(fullfile(sessionObject.getSessionFolder('BehavioralData'),'*.tdms'));
-
-% If the file exist
-if ~isempty(tdms_filepath)
-
-    % Get full path
-    tdms_filepath = fullfile(tdms_filepath.folder,tdms_filepath.name);
-
-    % -- All data will be stored in a MATLAB structed called sData (short for session data)
-    % Load sData if it exists (else return empty sData struct)
-    try
-        sData = sessionObject.loadData('sData');
-    catch
-        sData = struct();
-    end
-
-    % Load daqdata into sData
-    sData = pipe.extractDaqdataFromLabViewTDMS(sData, sessionObject);
-   
-    % Estimate running speed
-    sData = pipe.pp.estimateRunningSpeed(sData);
+% Implementation of the method : Add you code here:    
     
-    % Estimate wheel position and bin the positions along the linear track
-    sData = pipe.pp.estimateWheelPosition(sData); 
 
-    % Save the updated sData
-    sessionObject.saveData('sData',sData)
-
-end
 
 end
 

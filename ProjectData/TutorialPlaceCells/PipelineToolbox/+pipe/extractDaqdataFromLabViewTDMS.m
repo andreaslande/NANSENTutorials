@@ -16,7 +16,7 @@ function sData = extractDaqdataFromLabViewTDMS(sData, sessionObject)
 %
 % Written by Eivind Hennestad. Rewritten to pipeline by Andreas Lande.
 
-labviewFolder = sessionObject.getSessionFolder('BehavioralData');
+labviewFolder = sessionObject.getSessionFolder('Behavioral');
 
 % Find tdms file and convert to .mat file
 tdmsFile = dir(fullfile(labviewFolder, '*_data.tdms'));
